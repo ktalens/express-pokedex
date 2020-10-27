@@ -1,8 +1,17 @@
+<nav>
+    <a href="/">Return to Main</a> > <a href="/pokemon">Favorites</a>
+</nav>
+
 <h1>
     Pokemon Details: <%= pokeData.name %> <img src="<%= pokeData.sprites.front_default%> ">
 </h1>
-
+<form method="POST" action="/pokemon/<%= pokeData.name %>/?_method=DELETE ">
+    <input type="hidden" name="name" value="<%= pokeData.name %>">
+    <input type="submit" value="Remove favorite">
+</form>
+<br><br>
 <img height= 200px src="<%= pokeData.sprites.other['official-artwork'].front_default%> ">
+
 
 <h4>
     Abilities:

@@ -1,8 +1,14 @@
+<nav>
+    <a href="/">Return to Main</a>
+</nav>
+
 <h1>Favorited Pokemon</h1>
 
 <% favePoke.forEach(monster=>{ %> 
     <li>
+    <!-- <img height="30px" src="<%=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${monster.pokeID}.png`%>"> -->
     <%= monster.name %> 
     <a method="GET" href="/pokemon/<%= monster.name %> "> Details </a>
     </li>
 <% }) %> 
+
