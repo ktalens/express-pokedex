@@ -1,0 +1,55 @@
+<h1>
+    Pokemon Details: <%= pokeData.name %> <img src="<%= pokeData.sprites.front_default%> ">
+</h1>
+
+<img height= 200px src="<%= pokeData.sprites.other['official-artwork'].front_default%> ">
+
+<h4>
+    Abilities:
+</h4>
+<ul>
+    <%  let pokeAbilities= pokeData.abilities %> 
+    <% pokeAbilities.forEach(ability=>{ %>
+        <li>
+            <%= ability.ability.name %>
+        </li>
+        <% }) %> 
+</ul>
+
+<h4>
+    Base Stats:
+</h4>
+<ul>
+    <%  let pokeStats= pokeData.stats %> 
+    <% pokeStats.forEach(stat=>{ %>
+        <li>
+            <%= stat.stat.name %>: <%= stat.base_stat%>
+        </li>
+        <% }) %> 
+</ul>
+
+<h4>
+    Types:
+</h4>
+<ul>
+    <%  let pokeTypes= pokeData.types %> 
+    <% pokeTypes.forEach(type=>{ %>
+        <li>
+            <%= type.type.name %>
+        </li>
+        <% }) %> 
+</ul>
+
+<h4>
+    Moves:
+</h4>
+<ul>
+    <%  let pokeMoves= pokeData.moves %> 
+    <% pokeMoves.forEach(move=>{ %>
+        <li>
+            <%= move.move.name %>
+        </li>
+        <% }) %> 
+</ul>
+
+

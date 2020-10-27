@@ -3,5 +3,6 @@
 <% favePoke.forEach(monster=>{ %> 
     <li>
     <%= monster.name %> 
+    <a method="GET" href="/pokemon/<%= monster.name %> "> Details </a>
     </li>
 <% }) %> 
