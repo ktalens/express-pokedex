@@ -3,11 +3,13 @@ const router = express.Router();
 const db = require('../models')
 const axios = require('axios');
 const methodOverride= require('method-override') //nmp i method-override
+const serveStatic = require('serve-static')
 
 router.use(methodOverride('_method')) // looks at any request object coming in, and if there's a querystring, it looks to..... 
 
 router.use(express.urlencoded({ extended: false }));
-
+//router.use(express.static(`${__dirname}/public/style.css`))
+router.use(express.static(__dirname+'public/css/style.css'))
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {

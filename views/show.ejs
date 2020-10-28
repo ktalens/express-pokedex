@@ -1,64 +1,84 @@
 <nav>
     <a href="/">Return to Main</a> > <a href="/pokemon">Favorites</a>
 </nav>
+<div class="container">
+    <h2 class="text-center">
+        Pokemon Details:<br><br> <%= pokeData.name %> 
+    </h2>
 
-<h1>
-    Pokemon Details: <%= pokeData.name %> <img src="<%= pokeData.sprites.front_default%> ">
-</h1>
-<form method="POST" action="/pokemon/<%= pokeData.name %>/?_method=DELETE ">
-    <input type="hidden" name="name" value="<%= pokeData.name %>">
-    <input type="submit" value="Remove favorite">
-</form>
-<br><br>
-<img height= 200px src="<%= pokeData.sprites.other['official-artwork'].front_default%> ">
+    <div class="well show">
+    <img class="main" height= 200px src="<%= pokeData.sprites.other['official-artwork'].front_default%> ">
+    
+    <form method="POST" action="/pokemon/<%= pokeData.name %>/?_method=DELETE ">
+        <input type="hidden" name="name" value="<%= pokeData.name %>">
+        <input class="main" type="submit" id="remove"value="Remove">
+    </form>
+    <br><br>
+    <main>
+        <section>
+            <h4>
+                Moves:
+            </h4>
+            <ul>
+                <%  let pokeMoves= pokeData.moves %> 
+                <% pokeMoves.forEach(move=>{ %>
+                    <li>
+                        <%= move.move.name %>
+                    </li>
+                    <% }) %> 
+            </ul>
+        </section>
+        <section>
 
-
-<h4>
-    Abilities:
-</h4>
-<ul>
-    <%  let pokeAbilities= pokeData.abilities %> 
-    <% pokeAbilities.forEach(ability=>{ %>
-        <li>
-            <%= ability.ability.name %>
-        </li>
-        <% }) %> 
-</ul>
-
-<h4>
-    Base Stats:
-</h4>
-<ul>
-    <%  let pokeStats= pokeData.stats %> 
-    <% pokeStats.forEach(stat=>{ %>
-        <li>
-            <%= stat.stat.name %>: <%= stat.base_stat%>
-        </li>
-        <% }) %> 
-</ul>
-
-<h4>
-    Types:
-</h4>
-<ul>
-    <%  let pokeTypes= pokeData.types %> 
-    <% pokeTypes.forEach(type=>{ %>
-        <li>
-            <%= type.type.name %>
-        </li>
-        <% }) %> 
-</ul>
-
-<h4>
-    Moves:
-</h4>
-<ul>
-    <%  let pokeMoves= pokeData.moves %> 
-    <% pokeMoves.forEach(move=>{ %>
-        <li>
-            <%= move.move.name %>
-        </li>
-        <% }) %> 
-</ul>
-
-
+            <h4>
+                Base Stats:
+            </h4>
+            <ul>
+                <%  let pokeStats= pokeData.stats %> 
+                <% pokeStats.forEach(stat=>{ %>
+                    <li>
+                        <%= stat.stat.name %>: <%= stat.base_stat%>
+                    </li>
+                    <% }) %> 
+            </ul>
+            
+        </section>
+        <section>
+            
+            <h4>
+                Abilities:
+            </h4>
+            <ul>
+                <%  let pokeAbilities= pokeData.abilities %> 
+                <% pokeAbilities.forEach(ability=>{ %>
+                    <li>
+                        <%= ability.ability.name %>
+                    </li>
+                    <% }) %> 
+            </ul>
+        </section>
+        <section>
+            <h4>
+                Types:
+            </h4>
+            <ul>
+                <%  let pokeTypes= pokeData.types %> 
+                <% pokeTypes.forEach(type=>{ %>
+                    <li>
+                        <%= type.type.name %>
+                    </li>
+                    <% }) %> 
+            </ul>
+            
+        </section>
+        
+    </main>
+        
+        
+        <img src="<%= pokeData.sprites.front_default%> ">
+    </div>
+    
+    
+    
+    
+</div>

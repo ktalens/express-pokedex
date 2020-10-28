@@ -1,3 +1,65 @@
-h4{
-    color: red;
+body{
+   font-family: 'Signika', sans-serif;
+   background-color:rgb(227,53,13);
+   color: black;
+   text-shadow: 1pt 1pt rgba(248, 248, 248, 0.378);
+}
+
+main {
+   display: inline-flex;
+   flex-wrap: wrap;
+   height: auto;
+   width: 100%;
+   justify-content: space-around;
+}
+h1,h2 {
+   font-family: 'Press Start 2P', cursive; 
+   color: black;
+   text-shadow: 1pt 1pt rgba(255, 217, 0, 0.678);
+}
+.well{
+   font-family: 'Press Start 2P', cursive;
+   border: 1px solid black;
+   flex-basis: 30%;
+   text-align: center;
+   text-shadow: 1pt 1pt rgba(65, 75, 75, 0.603);
+   background-color: rgba(255, 255, 255, 0.904);
+   box-shadow: 1pt 1pt rgba(5, 5, 5, 0.726);
+}
+.show{
+   border: 10pt solid rgb(255, 230, 0);
+}
+
+.btn.btn-primary{
+   font-size: 8pt;
+   border: 1px solid black;
+   box-shadow: 1pt 1pt rgba(5, 5, 5, 0.726);
+}
+
+nav {
+   background-color: rgb(17, 38, 73);
+   border: 1px solid black;
+   text-shadow: 1pt 1pt rgba(0, 0, 0, 0.425);
+   color: rgb(220, 255, 22);
+   box-shadow: 2pt 2pt rgba(7, 7, 7, 0.541);
+}
+
+li {
+   list-style-type: none;
+   font-size: larger;
+   font-family: 'Signika', sans-serif;
+}
+
+.main {
+margin: 0 auto;
+display: block;
+}
+section {
+   flex-basis: 50%;
+}
+
+#remove {
+   margin: 30px auto;
+   font-size: small;
+   box-shadow:  1pt 1pt rgba(7, 7, 7, 0.541);;
 }
